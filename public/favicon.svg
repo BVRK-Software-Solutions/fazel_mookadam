@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="31" fill="#0f604f"/>
+  <text x="30" y="49" fill="#fffefa" font-family="Brush Script MT, Snell Roundhand, Segoe Script, cursive" font-size="52" font-style="italic" text-anchor="middle">F</text>
+  <path d="M12 51c11-6 27-7 40-2" fill="none" stroke="#fffefa" stroke-linecap="round" stroke-width="2"/>
+</svg>

@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-brand-950: #073d34;
+    --color-brand-900: #0b4b3f;
+    --color-brand-800: #0f604f;
+    --color-brand-600: #2b8873;
+    --color-brand-100: #dceee8;
+    --color-brand-50: #edf7f3;
+    --color-accent: #7463a7;
+    --color-accent-light: #b8afe0;
+    --color-ink: #17201e;
+    --color-muted: #61706c;
+    --color-cream: #f7f5ee;
+    --color-paper: #fffefa;
+    --font-display: Georgia, 'Times New Roman', serif;
+    --shadow-soft: 0 24px 70px rgba(7, 61, 52, 0.13);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5.5rem;
+    }
+    body {
+        @apply bg-paper text-ink m-0 font-sans antialiased;
+    }
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
