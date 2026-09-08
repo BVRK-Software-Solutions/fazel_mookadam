@@ -1,0 +1,16 @@
+{
+    "name": "Dr Fazel Mookadam",
+    "short_name": "Dr Mookadam",
+    "description": "General practitioner in Laudium, Centurion.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#fffefa",
+    "theme_color": "#0f604f",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

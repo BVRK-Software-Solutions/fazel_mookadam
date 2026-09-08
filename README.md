@@ -59,6 +59,23 @@ The hero uses the supplied photograph of Dr Mookadam from [the provided source](
 
 Before publishing, the doctor or practice manager should verify the displayed hours and confirm which medical-aid arrangements and services may be advertised.
 
+## SEO
+
+The site includes:
+
+- a descriptive title and meta description;
+- search-engine indexing directives and geographic metadata;
+- Open Graph and X/Twitter sharing metadata;
+- `Physician` JSON-LD with the practice contact details, address, speciality, service area, and opening hours;
+- a web-app manifest and favicon;
+- a locally hosted social-sharing image;
+- a canonical URL that follows the current deployment; and
+- build-generated `robots.txt` and `sitemap.xml` files.
+
+The production URL is supplied through the public `VITE_SITE_URL` build variable. It must be the complete HTTPS address and should end with `/`. The GitHub Pages workflow sets it automatically. For a local build without this variable, the site still builds normally but skips the sitemap because no trustworthy public URL is available.
+
+After launching the permanent domain, add it to [Google Search Console](https://search.google.com/search-console), submit `https://YOUR-DOMAIN/sitemap.xml`, inspect the home page URL, and request indexing. Sitemap submission is a discovery hint rather than a guarantee of indexing. Validate the JSON-LD with Google's [Rich Results Test](https://search.google.com/test/rich-results) whenever practice details or hours change.
+
 ## Share a prototype with GitHub Pages
 
 This repository includes `.github/workflows/deploy-pages.yml`. It builds the Vite application and publishes only the generated `dist/` directory whenever `main` changes. The Vite build uses relative asset paths, so it works at a repository URL such as `https://YOUR-USERNAME.github.io/REPOSITORY/`.
@@ -106,6 +123,7 @@ Run the complete release checks locally:
 npm ci
 npm run format:check
 npm run lint
+$env:VITE_SITE_URL = 'https://www.YOUR-DOMAIN.co.za/'
 npm run build
 npm run preview
 ```
@@ -141,4 +159,4 @@ GoDaddy's troubleshooting guide confirms that cPanel sites belong in `public_htm
 
 ### Future production updates
 
-For each release, run the quality checks and `npm run build` again, back up the current live files, then replace them with the new **contents of `dist/`**. Keep at least one known-good build so a release can be rolled back by restoring its files.
+For each release, set `VITE_SITE_URL` to the permanent HTTPS domain, run the quality checks and `npm run build` again, back up the current live files, then replace them with the new **contents of `dist/`**. Keep at least one known-good build so a release can be rolled back by restoring its files.

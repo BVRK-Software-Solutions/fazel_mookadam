@@ -4,6 +4,7 @@ import { About, Care } from './components/AboutCare'
 import BackToTop from './components/BackToTop'
 import { Contact, Hours } from './components/HoursContact'
 import Footer from './components/Footer'
+import Seo from './components/Seo'
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
             >
                 Skip to content
             </a>
+            <Seo />
             <Header />
             <main id="main">
                 <Hero />
