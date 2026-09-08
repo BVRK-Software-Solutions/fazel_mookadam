@@ -1,4 +1,6 @@
 export default function Brand({ light = false }: { light?: boolean }) {
+    const logoUrl = `${import.meta.env.BASE_URL}logo-mark.svg`
+
     return (
         <a
             href="#top"
@@ -8,7 +10,7 @@ export default function Brand({ light = false }: { light?: boolean }) {
             <span
                 className={`grid size-10 place-items-center rounded-full shadow-sm ${light ? 'text-brand-100 bg-white/10' : 'text-brand-800 bg-white'}`}
             >
-                <img src="/logo-mark.svg" alt="" className="size-9" />
+                <img src={logoUrl} alt="" className="size-9" />
             </span>
             <span>
                 <strong
