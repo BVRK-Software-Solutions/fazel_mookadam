@@ -30,7 +30,7 @@ The production-ready static site is generated in `dist/` and can be deployed to 
 - `src/components/` — reusable React sections and UI components
 - `src/data.ts` — typed practice details and opening hours
 - `src/index.css` — Tailwind import, brand theme tokens, and a small global layer
-- `public/logo-mark.svg` — prescription-inspired calligraphic F logo
+- `public/logo-mark.svg` — visiting-card-inspired medical emblem logo
 - `public/favicon.svg` — matching browser favicon
 - `assets/` — supplied visiting card and prescription references
 
@@ -55,7 +55,7 @@ Design-pattern research:
 - [South African medical-practice website guidance](https://www.jwd.co.za/website-design-for-medical-practices-south-africa/)
 - [Tabflows primary-care website examples](https://www.tabflows.com/blog/dpc-website-examples)
 
-The hero uses the supplied photograph of Dr Mookadam from [the provided source](https://yusratours.co.za/wp-content/uploads/2024/09/1-3.jpg), stored locally in `assets/dr-fazel-mookadam.jpg`.
+The logo and favicon recreate the medical emblem inside the green circle on the supplied visiting card. The website does not use a photograph of the doctor.
 
 Before publishing, the doctor or practice manager should verify the displayed hours and confirm which medical-aid arrangements and services may be advertised.
 
@@ -68,7 +68,6 @@ The site includes:
 - Open Graph and X/Twitter sharing metadata;
 - `Physician` JSON-LD with the practice contact details, address, speciality, service area, and opening hours;
 - a web-app manifest and favicon;
-- a locally hosted social-sharing image;
 - a canonical URL that follows the current deployment; and
 - build-generated `robots.txt` and `sitemap.xml` files.
 

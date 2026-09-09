@@ -1,8 +1,8 @@
 import { ArrowUpRight, BadgeCheck, MapPin, Phone } from 'lucide-react'
-import doctorImage from '../../assets/dr-fazel-mookadam.jpg'
 import { hours, practice } from '../data'
 
 export default function Hero() {
+    const logoUrl = `${import.meta.env.BASE_URL}logo-mark.svg`
     const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Africa/Johannesburg' }))
     const today = hours.find(({ dayIndex }) => dayIndex === now.getDay())!
     const currentTime = now.getHours() + now.getMinutes() / 60
@@ -52,14 +52,22 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="relative mx-auto min-h-[500px] w-full max-w-[570px] motion-safe:animate-[fade-up_.7s_.12s_ease-out_both] motion-safe:opacity-0 md:min-h-[590px]">
-                    <div className="shadow-soft absolute top-0 right-[4%] h-[460px] w-[min(370px,90%)] overflow-hidden rounded-t-[11rem] rounded-b-3xl bg-linear-to-br from-[#cfe5dd] to-[#e4ddf0] md:right-14 md:h-[540px] md:w-[410px]">
-                        <img
-                            src={doctorImage}
-                            alt="Dr Fazel Mookadam"
-                            className="h-full w-full object-cover object-center"
+                    <div className="shadow-soft bg-brand-800 absolute top-0 right-[4%] h-[460px] w-[min(370px,90%)] overflow-hidden rounded-t-[11rem] rounded-b-3xl md:right-14 md:h-[540px] md:w-[410px]">
+                        <div
+                            aria-hidden="true"
+                            className="absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,rgba(255,255,255,.15),transparent_34%),linear-gradient(145deg,rgba(116,99,167,.24),transparent_55%)]"
                         />
-                        <div className="from-brand-950/90 absolute inset-x-0 bottom-0 h-40 bg-linear-to-t to-transparent" />
-                        <div className="absolute right-8 bottom-7 left-8 text-white">
+                        <div
+                            aria-hidden="true"
+                            className="absolute top-20 left-1/2 size-64 -translate-x-1/2 rounded-full border border-white/10 shadow-[0_0_0_42px_rgba(255,255,255,.04),0_0_0_84px_rgba(255,255,255,.025)]"
+                        />
+                        <img
+                            src={logoUrl}
+                            alt=""
+                            aria-hidden="true"
+                            className="absolute top-28 left-1/2 size-44 -translate-x-1/2 drop-shadow-2xl md:top-36 md:size-48"
+                        />
+                        <div className="absolute right-8 bottom-8 left-8 border-t border-white/20 pt-6 text-center text-white">
                             <span className="font-display block text-2xl">Dr Fazel Mookadam</span>
                             <small className="mt-1 block text-[10px] font-bold tracking-[.15em] text-white/70 uppercase">
                                 M.D. · General Practitioner

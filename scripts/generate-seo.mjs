@@ -16,7 +16,6 @@ const siteUrl = new URL(configuredUrl)
 if (!siteUrl.pathname.endsWith('/')) siteUrl.pathname += '/'
 const canonicalUrl = siteUrl.href
 const sitemapUrl = new URL('sitemap.xml', canonicalUrl).href
-const socialImageUrl = new URL('dr-fazel-mookadam.jpg', canonicalUrl).href
 const lastModified = new Date().toISOString().slice(0, 10)
 const escapedCanonicalUrl = canonicalUrl.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 
@@ -36,11 +35,9 @@ writeFileSync(
 writeFileSync(resolve(outputDirectory, 'sitemap.xml'), sitemap)
 
 const indexPath = resolve(outputDirectory, 'index.html')
-const indexHtml = readFileSync(indexPath, 'utf8')
-    .replaceAll('https://yusratours.co.za/wp-content/uploads/2024/09/1-3.jpg', socialImageUrl)
-    .replace(
-        '</head>',
-        `<link rel="canonical" href="${escapedCanonicalUrl}"><meta property="og:url" content="${escapedCanonicalUrl}"></head>`,
-    )
+const indexHtml = readFileSync(indexPath, 'utf8').replace(
+    '</head>',
+    `<link rel="canonical" href="${escapedCanonicalUrl}"><meta property="og:url" content="${escapedCanonicalUrl}"></head>`,
+)
 writeFileSync(indexPath, indexHtml)
 console.log(`SEO: generated robots.txt and sitemap.xml for ${canonicalUrl}`)
