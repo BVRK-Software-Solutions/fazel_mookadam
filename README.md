@@ -102,6 +102,27 @@ This repository includes `.github/workflows/deploy-pages.yml`. It builds the Vit
 
 Every later push to `main` rebuilds and republishes the prototype. You can also run it manually from **Actions → Deploy prototype to GitHub Pages → Run workflow**.
 
+### Deploy a feature branch for testing
+
+When the workflow is run manually from a feature branch, GitHub may report an error similar to:
+
+```text
+Branch "feature/version-1" is not allowed to deploy to github-pages due to environment protection rules.
+```
+
+This means the `github-pages` environment is restricted to specific deployment branches. To allow a feature branch temporarily:
+
+1. Open the repository on GitHub and go to **Settings → Environments**.
+2. Select the **github-pages** environment.
+3. Under **Deployment branches and tags**, choose **Selected branches and tags**.
+4. Add a new **Branch** rule using the complete branch name, for example `feature/version-1`.
+5. Open **Actions → Deploy prototype to GitHub Pages**.
+6. Select **Run workflow**, choose the feature branch from the branch dropdown, and run it again.
+
+The feature-branch deployment replaces the currently published Pages site. After testing, deploy `main` again to restore the main version. If the feature branch no longer needs deployment access, return to **Settings → Environments → github-pages** and remove its branch rule so that only `main` can publish the site.
+
+GitHub documents these settings under [deployment branches and environment protection rules](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments).
+
 ### Bring the prototype down
 
 1. Open the repository on GitHub and go to **Settings → Pages**.
