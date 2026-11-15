@@ -36,7 +36,15 @@ jobs:
             - name: Build website
               run: npm run build
               env:
-                  VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+                  VITE_SITE_URL: https://fazelmookadam.co.za/
+
+            - name: Inspect production build
+              run: |
+                  echo "Build output:"
+                  find ./dist -maxdepth 3 -type f | sort
+
+                  echo "Checking entry point:"
+                  test -f ./dist/index.html
 
             - name: Configure GitHub Pages
               uses: actions/configure-pages@v6
