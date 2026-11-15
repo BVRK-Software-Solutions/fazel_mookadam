@@ -35,6 +35,8 @@ jobs:
 
             - name: Build website
               run: npm run build
+              env:
+                  VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
             - name: Configure GitHub Pages
               uses: actions/configure-pages@v6
